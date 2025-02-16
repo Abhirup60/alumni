@@ -12,7 +12,7 @@ const AdminContacts = () => {
   const deleteUserbyid = async(id)=>{
     console.log(id);
     try {
-      const response = await fetch(`https://alumni-server-side.onrender.com/api/admin/users/delete/${id}`,{
+      const response = await fetch(`https://alumni-server-side.onrender.com/api/admin/contacts/delete/${id}`,{
         method:"DELETE",
         headers:{
           Authorization: authToken,
