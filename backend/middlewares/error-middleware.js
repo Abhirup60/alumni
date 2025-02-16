@@ -1,0 +1,15 @@
+const errorMiddleware = (err, req, res, next)=>{
+    const status = err.status || 500;
+    const message = err.message || "Backend error";
+    const extraDetails = err.extraDetails || "Error from backend";
+
+    // const tieup = {
+    //     status,
+    //     message,
+    //     extraDetails,
+    // }
+    // console.log("this message is from error middleware: ", tieup);
+    return res.status(status).json({message, extraDetails});
+}
+
+module.exports = errorMiddleware;
