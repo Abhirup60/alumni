@@ -22,4 +22,12 @@ router.route("/contacts").get(authMiddleware, adminMiddleware, authAdmin.getAllC
 // delete contact data
 router.route("/contacts/delete/:id").delete(authMiddleware, adminMiddleware, authAdmin.deleteContacts)
 
+//to get the contact data from url
+router.route("/contacts/:id").get(authMiddleware, adminMiddleware, authAdmin.getContact)
+
+// to update the contact data
+router.route("/contacts/update/:id").patch(authMiddleware, adminMiddleware, authAdmin.updateContact)
+
+
+
 module.exports = router;

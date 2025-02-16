@@ -42,6 +42,29 @@ const deleteContacts = async(req,res)=>{
   }
 }
 
+const getContact = async(req,res)=>{
+  try {
+    const id = req.params.id;
+    const contactData = await Contact.findOne({_id:id});
+    return res.status(200).json({msg:contactData});
+  } catch (error) {
+    return res.status(400).json({ msg: "contact data not fetched from url using contact id" });
+  }
+}
+
+const updateContact = async(req,res)=>{
+  try {
+    const id = req.params.id;
+    const updatedContactData = req.body;
+    const updated_contactData = await Contact.updateOne({_id:id},{
+      $set: updatedContactData,
+    })
+    return res.status(200).json({msg:"contact updated",updated_contactData});
+  } catch (error) {
+    return res.status(404).json({msg:"contact not updated"});
+  }
+}
+
 // get user data from url using user._id
 const getUser = async (req, res) => {
   try {
@@ -68,4 +91,4 @@ const updateUserById = async(req,res)=>{
     }
 }
 
-module.exports = { getAllUser, getAllContact, deleteUser, getUser, updateUserById, deleteContacts };
+module.exports = { getAllUser, getAllContact, deleteUser, getUser, updateUserById, deleteContacts, getContact, updateContact };
