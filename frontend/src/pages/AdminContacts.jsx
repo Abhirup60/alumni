@@ -32,8 +32,8 @@ const AdminContacts = () => {
             </tr>
           </thead>
           <tbody>
-            {allusers.length > 0 ? (
-              allusers.map((user) => (
+            {allcontact.length > 0 ? (
+              allcontact.map((user) => (
                 <tr key={user._id}>
                   <td style={{ border: "1px solid black", padding: "8px" }}>{user.email}</td>
                   <td style={{ border: "1px solid black", padding: "8px" }}>{user.phone}</td>
