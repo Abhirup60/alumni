@@ -30,7 +30,7 @@ const AdminUpdateUser = () => {
     console.log(details);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin//users/update/${params.id}`,{
+      const response = await fetch(`https://alumni-server-side.onrender.com/api/admin//users/update/${params.id}`,{
         method:"PATCH",
         headers:{
           "Content-Type":"application/json",

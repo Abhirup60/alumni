@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../store/auth";
 
-const URL = "http://localhost:5000/api/form/contact";
+const URL = "https://alumni-server-side.onrender.com/api/form/contact";
 
 const Contact = () => {
   const [contact, setContact] = useState({

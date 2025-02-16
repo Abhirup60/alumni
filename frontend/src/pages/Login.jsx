@@ -28,7 +28,7 @@ const Login = () => {
     console.log(details);
 
     try {
-      const responseLogin = await fetch("http://localhost:5000/api/auth/login", {
+      const responseLogin = await fetch("https://alumni-server-side.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

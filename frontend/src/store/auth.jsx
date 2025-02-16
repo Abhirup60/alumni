@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const userAuthentication = async () => {
-    const response = await fetch("http://localhost:5000/api/auth/user", {
+    const response = await fetch("https://alumni-server-side.onrender.com/api/auth/user", {
       method: "GET",
       headers: {
         // Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
   // ------------- service logic in frontend -----------------//
 
   const userServiceProvide = async () => {
-    const response = await fetch("http://localhost:5000/api/auth/service", {
+    const response = await fetch("https://alumni-server-side.onrender.com/api/auth/service", {
       method: "GET",
     });
 
@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 
   const getAllUsers = async()=>{
     try {
-      const response = await fetch("http://localhost:5000/api/admin/users",{
+      const response = await fetch("https://alumni-server-side.onrender.com/api/admin/users",{
         method:"GET",
         headers: {
           Authorization: authToken,
@@ -91,7 +91,7 @@ export const AuthProvider = ({ children }) => {
   // ------------- get all contact logic in frontend -----------------//
   const getAllContacts = async()=>{
     try {
-      const response = await fetch("http://localhost:5000/api/admin/contacts",{
+      const response = await fetch("https://alumni-server-side.onrender.com/api/admin/contacts",{
         method:"GET",
         headers:{
           Authorization: authToken,
