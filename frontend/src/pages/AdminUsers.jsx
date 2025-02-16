@@ -10,7 +10,7 @@ const AdminUsers = () => {
   
   useEffect(() => {
     getAllUsers();
-  });
+  },[]);
 
   const deleteUserbyid = async (id) => {
     try {
