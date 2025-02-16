@@ -2,15 +2,34 @@ import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import { useAuth } from "../store/auth";
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 const AdminContacts = () => {
   const { getAllContacts } = useAuth();
-  const { allcontact } = useAuth();
+  const { allcontact, authToken } = useAuth();
   // console.log("all contacts from admin contact: ",allcontact);
 
-  // const deleteUserbyid = (id)=>{
-  //   console.log(id);
-  // }
+  const deleteUserbyid = async(id)=>{
+    console.log(id);
+    try {
+      const response = await fetch(`https://alumni-server-side.onrender.com/api/admin/users/delete/${id}`,{
+        method:"DELETE",
+        headers:{
+          Authorization: authToken,
+        }
+      })
+
+      if(response.ok){
+        const res_data = await response.json();
+        console.log("contact deleted successfully");
+        toast.success("contact deleted successfully");
+        getAllContacts();
+      }
+
+    } catch (error) {
+      toast.error("not deleted");
+    }
+  }
 
   useEffect(() => {
     getAllContacts();
@@ -22,7 +41,7 @@ const AdminContacts = () => {
         <b>Contact admin panel</b>
       </h1>
       <div>
-        <table style={{ width: "70%", borderCollapse: "collapse", marginLeft: "2rem", marginBottom: "3rem" }}>
+        <table style={{ width: "70%", borderCollapse: "collapse", marginLeft: "2rem", marginBottom: "3rem" ,marginTop:"2rem" }}>
           <thead>
             <tr>
               <th style={{ border: "1px solid black", padding: "8px", backgroundColor: "#f2f2f2", textAlign: "left" }}>
@@ -55,7 +74,7 @@ const AdminContacts = () => {
                       className='btn bg-green-500 hover:bg-green-700
                    text-white font-bold py-2 px-4
                      rounded-lg ml-8'
-                      // onClick={() => deleteUserbyid(user._id)}
+                      onClick={() => deleteUserbyid(user._id)}
                     >
                       Delete
                     </button>

@@ -19,4 +19,7 @@ router.route("/users/delete/:id").delete(authMiddleware, adminMiddleware, authAd
 // to get the contact data
 router.route("/contacts").get(authMiddleware, adminMiddleware, authAdmin.getAllContact);
 
+// delete contact data
+router.route("/contacts/delete/:id").delete(authMiddleware, adminMiddleware, authAdmin.deleteContacts)
+
 module.exports = router;
