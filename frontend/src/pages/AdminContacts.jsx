@@ -71,7 +71,7 @@ const AdminContacts = () => {
         </table>
        
       </div>
-      <div>
+      {/* <div>
         {allcontact.length > 0 ? (
           <ul>
             {allcontact.map((user) => (
@@ -83,7 +83,7 @@ const AdminContacts = () => {
         ) : (
           <p>No users found.</p>
         )}
-      </div>
+      </div> */}
       <Footer />
     </div>
   );
