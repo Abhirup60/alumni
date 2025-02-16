@@ -10,7 +10,7 @@ const errorMiddleware = require("./middlewares/error-middleware");
 
 // lets tackle cors
 const corsOption = {
-    origin:"https://alumni-clients-side.onrender.com",
+    origin:"https://alumni-user.onrender.com",
     methods:"GET, PUT, POST, PATCH, HEAD, DELETE",
     credentials:true,
 }
