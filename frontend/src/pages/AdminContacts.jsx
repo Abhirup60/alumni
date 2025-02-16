@@ -9,7 +9,7 @@ const AdminContacts = () => {
 
   useEffect(() => {
     getAllContacts();
-  }, []);
+  });
 
   return (
     <div>

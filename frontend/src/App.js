@@ -10,7 +10,6 @@ import Register from "./pages/Register";
 import Error from "./pages/Error";
 import Logout from "./pages/Logout";
 import AdminLayout from "./components/layouts/Admin-layout";
-import Footer from "./components/Footer";
 import AdminUsers from "./pages/AdminUsers";
 import AdminContacts from "./pages/AdminContacts";
 import AdminUpdateUser from "./pages/AdminUpdateUser";

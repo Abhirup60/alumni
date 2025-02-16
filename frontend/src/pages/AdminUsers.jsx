@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import { useAuth } from "../store/auth";
 import { Link } from 'react-router-dom'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 
 const AdminUsers = () => {
   const { getAllUsers, authToken } = useAuth();
@@ -12,7 +10,7 @@ const AdminUsers = () => {
   
   useEffect(() => {
     getAllUsers();
-  }, []);
+  });
 
   const deleteUserbyid = async (id) => {
     try {
